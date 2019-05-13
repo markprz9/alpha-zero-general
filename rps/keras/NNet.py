@@ -11,7 +11,7 @@ from utils import *
 from NeuralNet import NeuralNet
 
 import argparse
-from .TicTacToeNNet import TicTacToeNNet as onnet
+from .RPSNNet import RPSNNet as onnet
 
 """
 NeuralNet wrapper class for the TicTacToeNNet.
@@ -55,9 +55,8 @@ class NNetWrapper(NeuralNet):
         start = time.time()
 
         # preparing input
-        print board
-        board = board[np.newaxis, :, :]
-        print board
+        board = np.array(board)
+        board = board[np.newaxis, :, np.newaxis]
 
         # run
         pi, v = self.nnet.model.predict(board)

@@ -13,8 +13,6 @@ class State:
 
 
 class RPSGame(Game):
-    def __init__(self):
-
     def getInitBoard(self):
         return [-1, -1]
 
@@ -26,7 +24,7 @@ class RPSGame(Game):
         return 3
 
     def getNextState(self, board, player, action):
-        if action > 2
+        if action > 2:
           raise Exception("Invalid move: %d" % action)
         b = [-1, -1]
         b[0] = board[0]
@@ -57,13 +55,13 @@ class RPSGame(Game):
         return 1e-4
 
     def getCanonicalForm(self, board, player):
-        return [0, 0]
+        return board
 
     def getSymmetries(self, board, pi):
         return (board, pi)
 
     def stringRepresentation(self, board):
-        return board.tostring()
+        return "[%d,%d]" % (board[0], board[1])
 
 def display(board):
     print(board)

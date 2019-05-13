@@ -1,6 +1,8 @@
 from Coach import Coach
-from tictactoe.TicTacToeGame import TicTacToeGame as Game
-from tictactoe.keras.NNet import NNetWrapper as nn
+from rps.RPSGame import RPSGame as Game
+from rps.keras.NNet import NNetWrapper as nn
+#from tictactoe.TicTacToeGame import TicTacToeGame as Game
+#from tictactoe.keras.NNet import NNetWrapper as nn
 from utils import *
 
 args = dotdict({
@@ -21,7 +23,7 @@ args = dotdict({
 })
 
 if __name__=="__main__":
-    g = Game(6)
+    g = Game()
     nnet = nn(g)
 
     if args.load_model:
